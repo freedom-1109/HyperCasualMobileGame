@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bonus"))
-            Game.MoveBonus();
+            Game.BonusBehavior();
     }
 
     private void FixedUpdate()
