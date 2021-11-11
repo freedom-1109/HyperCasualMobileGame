@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,11 +8,18 @@ public class Player : MonoBehaviour
     private Vector3 direction;
     [SerializeField] private float speed;
 
-    // подбор бонуса
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Bonus"))
-            Game.BonusBehavior();
+        switch (other.gameObject.tag)
+        {
+            case "Bonus": // подбор бонуса
+                Game.BonusBehavior();
+                break;
+            case "let": // столкновение с препятствием
+                Dead();
+                break;
+        }
     }
 
     private void FixedUpdate()
@@ -30,5 +34,10 @@ public class Player : MonoBehaviour
             _player.transform.Translate(direction * speed);
         else
             _player.transform.Translate(direction * -speed);
+    }
+
+    private void Dead()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

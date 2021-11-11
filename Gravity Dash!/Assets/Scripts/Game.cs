@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -16,7 +13,7 @@ public class Game : MonoBehaviour
     private static int Score;
     [SerializeField] private Text ScoreText;
     
-    private void Start()
+    public void Start()
     {
         Score = 0;
         buttonActive = false;
