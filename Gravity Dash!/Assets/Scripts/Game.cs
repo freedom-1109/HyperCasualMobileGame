@@ -5,38 +5,40 @@ using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
-    private static GameObject bonus;
-    private static GameObject player;
+    public static GameObject Bonus;
+    [SerializeField] private GameObject player;
 
-    private static int Score;
-    [SerializeField] private Text ScoreText;
+    private static int _score;
+    [SerializeField] private Text scoreText;
+    private static Text _scoreTextToWrite; // static переменная scoreText для использования ее не в FixedUpdate() (что-то вроде оптимизации)
     
-    public void Awake()
+    public void Start()
     {
-        Score = 0;
-        
+        // начальные значение счета
+        _score = 0;
+        _scoreTextToWrite = scoreText;
+        _scoreTextToWrite.text = _score.ToString();
+
         // переменные статические => нужно их задать так, а не через [SerializeField]
-        bonus = GameObject.Find("Main Camera/Canvas/Game Field/Bonus");
-        player = GameObject.Find("Main Camera/Canvas/Game Field/Player");
+        Bonus = GameObject.Find("Main Camera/Canvas/Game Field/Bonus");
         
         // установка обьектов на старт позиции
-        bonus.transform.localPosition = new Vector3(Random.Range(-.3f, .3f), .425f, 0);
+        Bonus.transform.localPosition = new Vector3(Random.Range(-0.3f, 0.3f), 0.425f, 0);
         player.transform.localPosition = new Vector3(0,0,0);
-    }
-
-    private void FixedUpdate()
-    {
-        // вывод счета на экран
-        ScoreText.text = Score.ToString();
+        
+        // установка начального направления полета игрока
+        Player.direction = Bonus.transform.localPosition.normalized;
     }
 
     public static void BonusBehavior()
     {
-        Score++;
+        _score++;
+        // вывод счета на экран
+        _scoreTextToWrite.text = _score.ToString();
         
         // перемещение бонуса
-        bonus.transform.localPosition = Math.Abs(bonus.transform.localPosition.y - .425f) < .01 ? 
-            new Vector3(Random.Range(-.3f, .3f), -.425f, 0) : 
-            new Vector3(Random.Range(-.3f, .3f), .425f, 0);
+        Bonus.transform.localPosition = Math.Abs(Bonus.transform.localPosition.y - 0.425f) < .01 ? 
+            new Vector3(Random.Range(-0.3f, 0.3f), -0.425f, 0) : 
+            new Vector3(Random.Range(-0.3f, 0.3f), 0.425f, 0);
     }
 }
