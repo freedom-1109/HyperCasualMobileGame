@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
         direction = new Vector2(bonusPosition.x - playerPosition.x, bonusPosition.y - playerPosition.y).normalized;
         
         // движение игрока
-        _player.transform.Translate(direction * speed);
+        if (!Game.buttonActive)
+            _player.transform.Translate(direction * speed);
+        else
+            _player.transform.Translate(direction * -speed);
     }
 }
