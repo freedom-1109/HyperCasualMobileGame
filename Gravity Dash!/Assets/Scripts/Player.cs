@@ -10,7 +10,11 @@ public class Player : MonoBehaviour
     [SerializeField] public float playerSpeed;
     [SerializeField] public float playerRotationSpeed;
 
-    public void OnClick() {playerSpeed = -playerSpeed;} // разворот игрока по нажатию на экран
+    public static bool GameBlock;
+
+    public void OnClick() {if (!GameBlock) playerSpeed = -playerSpeed;} // разворот игрока по нажатию на экран
+
+    public void RemoveBlock() {GameBlock = false;} // "пауза" до нажатия
     
     // вычисление нужного направления для движения игрока
     private void ChangePlayerDirection()
@@ -38,7 +42,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         // движение игрока
-        player.transform.Translate(direction * playerSpeed);
+        if (!GameBlock) 
+            player.transform.Translate(direction * playerSpeed);
         playerBody.transform.Rotate(0, 0, playerRotationSpeed);
     }
 

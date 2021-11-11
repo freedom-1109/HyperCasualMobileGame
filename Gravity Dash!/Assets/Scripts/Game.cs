@@ -14,10 +14,13 @@ public class Game : MonoBehaviour
     
     public void Start()
     {
-        // начальные значение счета
+        // установка всех начальных значений
+        // счет
         _score = 0;
         _scoreTextToWrite = scoreText;
         _scoreTextToWrite.text = _score.ToString();
+        // блок до нажатия
+        Player.GameBlock = true;
 
         // переменные статические => нужно их задать так, а не через [SerializeField]
         Bonus = GameObject.Find("Main Camera/Canvas/Game Field/Bonus");

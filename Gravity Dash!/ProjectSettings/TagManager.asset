@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Bonus
   - let
-  - Enemy
+  - Remover
   layers:
   - Default
   - TransparentFX
