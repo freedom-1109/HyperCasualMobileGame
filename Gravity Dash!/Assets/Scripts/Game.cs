@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
-    public static GameObject Bonus;
-    public static GameObject Player;
+    private static GameObject bonus;
+    private static GameObject player;
 
     private static int Score;
     [SerializeField] private Text ScoreText;
@@ -18,16 +18,19 @@ public class Game : MonoBehaviour
     {
         Score = 0;
         
-        Bonus = GameObject.Find("Main Camera/Canvas/Game Field/Bonus");
-        Player = GameObject.Find("Main Camera/Canvas/Game Field/Player");
+        // переменные статыческие => нужно их задать так, а не через [SerializeField]
+        bonus = GameObject.Find("Main Camera/Canvas/Game Field/Bonus");
+        player = GameObject.Find("Main Camera/Canvas/Game Field/Player");
         
-        Bonus.transform.localPosition = new Vector3(Random.Range(-.3f, .3f), .425f, 0);
-        Player.transform.localPosition = new Vector3(0,0,0);
+        // установка обьектов на старт позиции
+        bonus.transform.localPosition = new Vector3(Random.Range(-.3f, .3f), .425f, 0);
+        player.transform.localPosition = new Vector3(0,0,0);
         
     }
 
     private void FixedUpdate()
     {
+        // вывод счета на экран
         ScoreText.text = Score.ToString();
     }
 
@@ -35,7 +38,8 @@ public class Game : MonoBehaviour
     {
         Score++;
         
-        Bonus.transform.localPosition = Math.Abs(Bonus.transform.localPosition.y - .425f) < .01 ? 
+        // перемещение бонуса
+        bonus.transform.localPosition = Math.Abs(bonus.transform.localPosition.y - .425f) < .01 ? 
             new Vector3(Random.Range(-.3f, .3f), -.425f, 0) : 
             new Vector3(Random.Range(-.3f, .3f), .425f, 0);
     }

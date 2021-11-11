@@ -6,10 +6,12 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    private GameObject _bonus = Game.Bonus;
-    private GameObject _player = Game.Player;
+    [SerializeField] private GameObject _bonus;
+    [SerializeField] private GameObject _player;
+    private Vector3 direction;
     [SerializeField] private float speed;
 
+    // подбор бонуса
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Bonus"))
@@ -18,6 +20,12 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // вычисление направления движения игрока
+        var bonusPosition = _bonus.transform.localPosition;
+        var playerPosition = _player.transform.localPosition;
+        direction = new Vector2(bonusPosition.x - playerPosition.x, bonusPosition.y - playerPosition.y).normalized;
         
+        // движение игрока
+        _player.transform.Translate(direction * speed);
     }
 }
