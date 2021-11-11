@@ -355,9 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754a1748a5aeceb4590069934c2b0b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonus: {fileID: 614048519}
-  _player: {fileID: 592127919}
-  _playerBody: {fileID: 1320866346}
+  player: {fileID: 592127919}
+  playerBody: {fileID: 1320866346}
   playerSpeed: 0.065
   playerRotationSpeed: 3
 --- !u!58 &592127922
@@ -872,7 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094359e68c81c4c44951737118ca3f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 1104366074}
+  player: {fileID: 592127919}
+  scoreText: {fileID: 1104366074}
 --- !u!1 &1299991801
 GameObject:
   m_ObjectHideFlags: 0

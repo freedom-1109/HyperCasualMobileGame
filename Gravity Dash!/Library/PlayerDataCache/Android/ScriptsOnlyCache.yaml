@@ -148,7 +148,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 5f2088e48c51ede715c0f28006d88d3f
+      Hash: ef2c20f8eeb2abbea6fedd8ba831bc50
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -610,7 +610,7 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: dcd15d21822398e0af052aaddb460f7e
+      Hash: 64c52b48ba6a2b5c9a57248b64d73e53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
