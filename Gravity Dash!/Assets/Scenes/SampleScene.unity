@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 592127919}
   enemy: {fileID: 1836158467863921753, guid: 3cb59c93a2fddc046aa8fa5f09522f05, type: 3}
-  spawnEnemiesWait: 1
+  spawnEnemiesWait: 2
   scoreText: {fileID: 1104366074}
 --- !u!1 &1320866346
 GameObject:
