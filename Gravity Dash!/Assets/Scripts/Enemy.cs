@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("qwe");
         if (other.gameObject.CompareTag("Remover"))
             Destroy(enemy);
     }
@@ -21,11 +20,12 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         rotateSpeed = Random.Range(-rotateSpeedRange, rotateSpeedRange);
+        enemyBody.transform.Rotate(0, 0, Random.Range(-180, 180));
     }
 
     private void FixedUpdate()
     {
-        enemy.transform.Translate(1 * moveSpeed, 0, 0);
+        enemy.transform.Translate(moveSpeed, 0, 0);
         enemyBody.transform.Rotate(0, 0, rotateSpeed);
     }
 }

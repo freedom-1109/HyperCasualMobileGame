@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject playerBody;
 
     public static Vector3 direction;
+    
     [SerializeField] public float playerSpeed;
     [SerializeField] public float playerRotationSpeed;
 
@@ -37,6 +38,7 @@ public class Player : MonoBehaviour
         }
         
         ChangePlayerDirection();
+        playerRotationSpeed *= -1;
     }
 
     private void FixedUpdate()

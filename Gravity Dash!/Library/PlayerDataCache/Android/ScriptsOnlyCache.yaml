@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Enemy
     - Game
     - Player
     Unity.2D.Animation.Editor.dll:
@@ -72,7 +73,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3440}
     - Class: 114
-      Script: {instanceID: 5796}
+      Script: {instanceID: 5744}
+    - Class: 114
+      Script: {instanceID: 5798}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -148,7 +151,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: ef2c20f8eeb2abbea6fedd8ba831bc50
+      Hash: 9f6f1369be00ec6a46aa37b2477ec2da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Game
@@ -602,6 +605,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 63263ecd28bd53d98253e4c7e732a544
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
   - hash:
       serializedVersion: 2
       Hash: 762a30c8d779b11af16ed9ce1f2d32fa
