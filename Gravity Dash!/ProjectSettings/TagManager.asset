@@ -7,6 +7,7 @@ TagManager:
   - Bonus
   - let
   - Remover
+  - Border
   layers:
   - Default
   - TransparentFX

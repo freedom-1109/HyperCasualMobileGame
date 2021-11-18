@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,13 +25,26 @@ public class Player : MonoBehaviour
         var playerPosition = player.transform.localPosition;
         direction = new Vector2(bonusPosition.x - playerPosition.x, bonusPosition.y - playerPosition.y).normalized;
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Border":
+                playerSpeed = Math.Abs(playerSpeed);
+                break;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.tag)
         {
             case "Bonus": // подбор бонуса
                 Game.BonusBehavior();
+                break;
+            case "Border":
+                playerSpeed = Math.Abs(playerSpeed);
                 break;
             case "let": // столкновение с препятствием
                 Dead();

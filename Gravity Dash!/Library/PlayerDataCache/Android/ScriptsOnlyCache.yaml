@@ -626,4 +626,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/nnabo/Downloads/test.apk
+  playerPath: C:/Users/nnabo/Downloads/test(fixed).apk
