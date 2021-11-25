@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 1836158467863921750}
   enemyBody: {fileID: 1836158466709572527}
-  moveSpeed: 0.03
+  EnemySpeed: 0.025
   rotateSpeedRange: 3
 --- !u!50 &-1706862662744429899
 Rigidbody2D:

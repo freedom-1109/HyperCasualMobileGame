@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject playerBody;
 
-    public static Vector3 direction;
+    public static Vector3 Direction;
     
     [SerializeField] public float playerSpeed;
     [SerializeField] public float playerRotationSpeed;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         var bonusPosition = Game.Bonus.transform.localPosition;
         var playerPosition = player.transform.localPosition;
-        direction = new Vector2(bonusPosition.x - playerPosition.x, bonusPosition.y - playerPosition.y).normalized;
+        Direction = new Vector2(bonusPosition.x - playerPosition.x, bonusPosition.y - playerPosition.y).normalized;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         {
             case "Bonus": // подбор бонуса
                 Game.BonusBehavior();
+                playerSpeed += 0.001f;
                 break;
             case "Border":
                 playerSpeed = Math.Abs(playerSpeed);
@@ -59,7 +60,7 @@ public class Player : MonoBehaviour
     {
         // движение игрока
         if (!GameBlock) 
-            player.transform.Translate(direction * playerSpeed);
+            player.transform.Translate(Direction * playerSpeed);
         playerBody.transform.Rotate(0, 0, playerRotationSpeed);
     }
 

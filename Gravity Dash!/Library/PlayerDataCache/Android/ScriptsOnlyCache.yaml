@@ -607,7 +607,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 63263ecd28bd53d98253e4c7e732a544
+      Hash: 7ca3a4b98ef2baaf2caca012d28f9e46
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -626,4 +626,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/nnabo/Downloads/test(fixed).apk
+  playerPath: C:/Users/nnabo/Downloads/test.apk
