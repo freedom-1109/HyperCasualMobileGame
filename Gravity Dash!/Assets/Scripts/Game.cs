@@ -70,7 +70,7 @@ public class Game : MonoBehaviour
     
     private IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(spawnEnemiesWait + 0.025f - Math.Abs(EnemySpeed));
+        
         if (Score / 5 % 2 == 0)
         {
             if (!Player.GameBlock)
@@ -81,6 +81,7 @@ public class Game : MonoBehaviour
             if (!Player.GameBlock)
                 Instantiate(enemy, new Vector3(4f, Random.Range(-1.4f, 1.4f), 0), Quaternion.identity);
         }
+        yield return new WaitForSeconds(spawnEnemiesWait + 0.025f - Math.Abs(EnemySpeed));
         StartCoroutine(SpawnEnemies());
     }
 }
