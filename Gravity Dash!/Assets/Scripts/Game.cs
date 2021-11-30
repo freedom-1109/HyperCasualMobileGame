@@ -70,7 +70,7 @@ public class Game : MonoBehaviour
     
     private IEnumerator SpawnEnemies()
     {
-        yield return new WaitForSeconds(spawnEnemiesWait + 0.025f - EnemySpeed);
+        yield return new WaitForSeconds(spawnEnemiesWait + 0.025f - Math.Abs(EnemySpeed));
         if (Score / 5 % 2 == 0)
         {
             if (!Player.GameBlock)

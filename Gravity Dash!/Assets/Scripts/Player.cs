@@ -66,6 +66,6 @@ public class Player : MonoBehaviour
 
     private void Dead()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainMenuScene");
     }
 }

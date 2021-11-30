@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
