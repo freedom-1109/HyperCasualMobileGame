@@ -37,7 +37,7 @@ public class Game : MonoBehaviour
         
         // установка обьектов на старт позиции
         Bonus.transform.localPosition = new Vector3(Random.Range(-bonusPosRange, bonusPosRange), 0.425f, 0);
-        player.transform.localPosition = new Vector3(0,0,0);
+        player.transform.localPosition = new Vector3(0,-0.4f,0);
         
         // установка начального направления полета игрока
         Player.Direction = Bonus.transform.localPosition.normalized;

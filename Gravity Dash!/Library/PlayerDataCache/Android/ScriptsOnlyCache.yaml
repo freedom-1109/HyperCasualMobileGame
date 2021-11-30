@@ -52,25 +52,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 2246}
+      Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2844}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3076}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3324}
+      Script: {instanceID: 3326}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3442}
     - Class: 114
-      Script: {instanceID: 17354}
-    - Class: 114
-      Script: {instanceID: 17356}
-    - Class: 114
-      Script: {instanceID: 17370}
+      Script: {instanceID: 4106}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -111,25 +107,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1522}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1706}
+      Script: {instanceID: 1708}
     - Class: 114
-      Script: {instanceID: 2246}
+      Script: {instanceID: 2248}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2844}
+      Script: {instanceID: 2846}
     - Class: 114
-      Script: {instanceID: 3076}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3324}
+      Script: {instanceID: 3326}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3442}
     - Class: 114
-      Script: {instanceID: 5744}
+      Script: {instanceID: 5748}
     - Class: 114
-      Script: {instanceID: 5798}
+      Script: {instanceID: 5802}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -481,6 +477,12 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -677,12 +679,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenu
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenuScene.unity
