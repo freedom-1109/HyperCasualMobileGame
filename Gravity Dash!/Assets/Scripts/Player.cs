@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class Player : MonoBehaviour
 {
@@ -66,6 +67,11 @@ public class Player : MonoBehaviour
 
     private void Dead()
     {
+        if (Game.Score > Game.settings.BestScore)
+        {
+            Game.settings.BestScore = Game.Score;
+            File.WriteAllText(Application.streamingAssetsPath + "/settings.json", JsonUtility.ToJson(Game.settings));
+        }
         SceneManager.LoadScene("MainMenuScene");
     }
 }

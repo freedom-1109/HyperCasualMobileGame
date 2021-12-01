@@ -1,22 +1,36 @@
+using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    private bool IsSoundOn = true;
+    private Game.Settings settings = Game.settings;
+    [SerializeField] private Text bestScore;
+    [SerializeField] private Text LastScore;
     
     public void PlayGame(){SceneManager.LoadScene("SampleScene");}
-    
+
+
+    private void Start()
+    {
+        bestScore.text = $"Best score\n{settings.BestScore}";
+        LastScore.text = Game.Score == 0 ? "" : $"Last\n{Game.Score}";
+    }
+
     public void AudioOut()
     {
-        if (IsSoundOn)
+        if (Game.settings.SoundOn)
         {
-            IsSoundOn = false;
+            settings.SoundOn = false;
+            File.WriteAllText(Application.streamingAssetsPath + "/settings.json", JsonUtility.ToJson(settings));
             AudioListener.volume = 0;
         }
         else
         {
-            IsSoundOn = true;
+            Game.settings.SoundOn = true;
+            File.WriteAllText(Application.streamingAssetsPath + "/settings.json", JsonUtility.ToJson(settings));
             AudioListener.volume = 1;
         }
     }

@@ -1,12 +1,21 @@
 using System;
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
+    public class Settings
+    {
+        public bool SoundOn;
+        public int BestScore;
+    }
+    
+    public static Settings settings =
+        JsonUtility.FromJson<Settings>(File.ReadAllText(Application.streamingAssetsPath + "/settings.json"));
+    
     public static GameObject Bonus;
     private static float bonusPosRange;
     [SerializeField] private GameObject player;
@@ -52,7 +61,7 @@ public class Game : MonoBehaviour
         EnemySpeed += 0.001f;
         
         Score++;
-        
+
         // разворот врага
         if (Score % 5 == 0)
         {
@@ -84,4 +93,6 @@ public class Game : MonoBehaviour
         yield return new WaitForSeconds(spawnEnemiesWait + 0.025f - Math.Abs(EnemySpeed));
         StartCoroutine(SpawnEnemies());
     }
+    
+    
 }
