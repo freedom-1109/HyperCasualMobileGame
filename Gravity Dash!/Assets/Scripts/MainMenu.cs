@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame(){SceneManager.LoadScene("SampleScene");}
 
-
     private void Start()
     {
         bestScore.text = $"Best score\n{settings.BestScore}";
@@ -37,6 +36,6 @@ public class MainMenu : MonoBehaviour
     
     public void GoToURL()
     {
-        Application.OpenURL("https://yandex.ru/images/search?text=��������%20���&from=tabbar");
+        Application.OpenURL("https://www.google.com/");
     }
 }
