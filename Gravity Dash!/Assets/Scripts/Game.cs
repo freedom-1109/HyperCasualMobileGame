@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
@@ -27,9 +28,11 @@ public class Game : MonoBehaviour
     public static int Score;
     [SerializeField] private Text scoreText;
     private static Text _scoreTextToWrite; // static переменная scoreText для использования ее не в FixedUpdate() (что-то вроде оптимизации)
-    
+
+    private Vector3 direction;
     public void Start()
     {
+        direction = Vector3.down;
         // установка всех начальных значений
         // счет
         Score = 0;
@@ -53,6 +56,13 @@ public class Game : MonoBehaviour
         
         // спавн врагов
         StartCoroutine(SpawnEnemies());
+    }
+
+    private void FixedUpdate()
+    {
+        if (math.abs(gameObject.transform.position.y) > 0.2f)
+            direction = -direction;
+        gameObject.transform.Translate(direction * 0.0025f);
     }
 
     public static void BonusBehavior()

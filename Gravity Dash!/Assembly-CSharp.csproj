@@ -53,7 +53,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Game.cs" />
-     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
  <Reference Include="UnityEngine">
