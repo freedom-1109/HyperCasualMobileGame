@@ -8,15 +8,6 @@ using Random = UnityEngine.Random;
 
 public class Game : MonoBehaviour
 {
-    public class Settings
-    {
-        public bool SoundOn;
-        public int BestScore;
-    }
-    
-    public static Settings settings =
-        JsonUtility.FromJson<Settings>(File.ReadAllText(Application.streamingAssetsPath + "/settings.json"));
-    
     public static GameObject Bonus;
     private static float bonusPosRange;
     [SerializeField] private GameObject player;
