@@ -51,8 +51,10 @@ public class Game : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (math.abs(gameObject.transform.position.y) > 0.2f)
-            direction = -direction;
+        if (gameObject.transform.position.y > 0.2f)
+            direction = Vector3.down;
+        if (gameObject.transform.position.y < -0.2f)
+            direction = Vector3.up;
         gameObject.transform.Translate(direction * 0.0025f);
     }
 
